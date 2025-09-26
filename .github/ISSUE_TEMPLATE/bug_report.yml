@@ -1,0 +1,155 @@
+name: Bug Report - Testing Infrastructure
+description: Report a bug in the testing-infrastructure submodule
+title: "[Bug] testing-infrastructure: "
+labels: ["bug", "testing"]
+assignees:
+  - macjunkins
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Bug Report for testing-infrastructure
+
+        Thank you for reporting a bug in the testing-infrastructure submodule of AcreetionOS ARM64.
+
+        Please provide detailed information to help us diagnose and fix the issue.
+
+  - type: dropdown
+    id: bug-category
+    attributes:
+      label: Bug Category
+      description: What type of bug is this?
+      options:
+        - QEMU Testing Failure
+        - Hardware Testing Issue
+        - CI/CD Pipeline Problem
+        - Test Framework Error
+        - Automation Script Failure
+        - Performance Testing Issue
+        - Integration Testing Problem
+        - Validation Framework Bug
+        - Environment Setup Issue
+        - Other (please specify)
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of the bug
+      placeholder: Describe what happened and what you expected to happen
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Steps to Reproduce
+      description: Steps to reproduce the behavior
+      placeholder: |
+        1. Set up testing environment...
+        2. Run test command...
+        3. See error...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Testing Environment
+      description: Where did this occur?
+      options:
+        - QEMU ARM64 Virtual Machine
+        - Raspberry Pi Hardware Testing
+        - Pine64 Hardware Testing
+        - GitHub Actions CI/CD
+        - GitLab CI Pipeline
+        - Docker Container Testing
+        - Local Development Environment
+        - Other (please specify in description)
+    validations:
+      required: true
+
+  - type: textarea
+    id: system-info
+    attributes:
+      label: System Information
+      description: |
+        Please provide:
+        - Testing framework version and configuration
+        - QEMU version (if applicable)
+        - Hardware platform details (if applicable)
+        - Python version and dependencies
+        - Host system details
+      placeholder: |
+        Testing Framework: pytest version, custom frameworks
+        QEMU Version: qemu-system-aarch64 version
+        Hardware Platform: Raspberry Pi 4, Pine64, etc.
+        Python Version: 3.9+
+        Host System: macOS/Linux with version
+        Dependencies: requirements.txt versions
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-output
+    attributes:
+      label: Error Output
+      description: Copy and paste any error messages or logs
+      placeholder: Paste testing framework errors, QEMU output, or CI/CD logs here
+      render: shell
+
+  - type: dropdown
+    id: milestone-impact
+    attributes:
+      label: Milestone Impact
+      description: How does this bug affect milestone progress?
+      options:
+        - Blocking - Prevents milestone completion
+        - High - Significantly impacts milestone work
+        - Medium - Moderate impact on development
+        - Low - Minor issue, workaround available
+        - None - No milestone impact
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: cross-repository
+    attributes:
+      label: Cross-Repository Impact
+      description: Does this bug affect other submodules?
+      options:
+        - label: This bug affects other submodules
+        - label: Integration testing is required
+        - label: Submodule synchronization may be needed
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: |
+        Add any other context about the problem:
+        - Testing configuration details
+        - Platform-specific issues
+        - CI/CD pipeline context
+        - Hardware-specific problems
+        - Performance impact details
+      placeholder: Any additional testing-specific information that might help
+
+  - type: checkboxes
+    id: validation
+    attributes:
+      label: Validation Checklist
+      description: Please confirm you have done the following
+      options:
+        - label: I have searched existing issues for duplicates
+          required: true
+        - label: I have tested this on the latest version of the submodule
+          required: true
+        - label: I have included all relevant error output and logs
+          required: true
+        - label: I have provided steps to reproduce the issue
+          required: true

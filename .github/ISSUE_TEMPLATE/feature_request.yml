@@ -1,0 +1,197 @@
+name: Feature Request - Testing Infrastructure
+description: Suggest a feature for the testing-infrastructure submodule
+title: "[Feature] testing-infrastructure: "
+labels: ["enhancement", "testing"]
+assignees:
+  - macjunkins
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Feature Request for testing-infrastructure
+
+        Thank you for suggesting a feature for the testing-infrastructure submodule of AcreetionOS ARM64.
+
+        Please describe your feature request in detail to help us understand your needs.
+
+  - type: dropdown
+    id: feature-category
+    attributes:
+      label: Feature Category
+      description: What type of feature is this?
+      options:
+        - QEMU Testing Enhancement
+        - Hardware Testing Feature
+        - CI/CD Pipeline Improvement
+        - Test Framework Enhancement
+        - Automation Script Feature
+        - Performance Testing Tool
+        - Integration Testing Feature
+        - Validation Framework Enhancement
+        - Reporting and Analytics
+        - Documentation Tool
+        - Other (please specify)
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature Description
+      description: A clear and detailed description of the feature you're requesting
+      placeholder: Describe the feature and how it would work
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case and Motivation
+      description: Explain why this feature would be valuable
+      placeholder: |
+        - What problem does this solve?
+        - How would this benefit AcreetionOS ARM64 testing?
+        - Are there specific testing scenarios this addresses?
+        - Would this improve development velocity or quality?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: testing-scope
+    attributes:
+      label: Testing Scope
+      description: Which testing areas would this feature target?
+      options:
+        - All Testing Frameworks
+        - QEMU Virtual Machine Testing
+        - Hardware Testing (Raspberry Pi/Pine64)
+        - CI/CD Pipeline Testing
+        - Cross-Repository Integration Testing
+        - Performance and Benchmarking
+        - Security and Compliance Testing
+        - Automated Validation
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical-approach
+    attributes:
+      label: Proposed Technical Approach
+      description: If you have ideas on how to implement this feature
+      placeholder: |
+        - What testing frameworks would be involved?
+        - Are there new dependencies needed?
+        - What automation changes are required?
+        - Any CI/CD pipeline modifications needed?
+
+  - type: dropdown
+    id: platform-compatibility
+    attributes:
+      label: Platform Compatibility Impact
+      description: How does this feature affect ARM64 platform testing?
+      options:
+        - Enhances Multi-Platform Testing
+        - ARM64 Specific Testing Feature
+        - Cross-Platform Testing Improvement
+        - Requires Platform-Specific Implementation
+        - Platform Agnostic Testing Feature
+        - Hardware-Specific Testing Enhancement
+        - Unknown - Need Investigation
+    validations:
+      required: true
+
+  - type: dropdown
+    id: milestone-alignment
+    attributes:
+      label: Milestone Alignment
+      description: Which project milestone does this align with?
+      options:
+        - Milestone 0 - Infrastructure Setup
+        - Milestone 1 - ARM64 Conversion
+        - Milestone 2 - Bootable System
+        - Milestone 3 - AcreetionOS Identity
+        - Milestone 4 - Production Release
+        - Future Enhancement
+        - Cross-Milestone Feature
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: cross-repository-impact
+    attributes:
+      label: Cross-Repository Dependencies
+      description: Which other submodules would this feature interact with?
+      options:
+        - label: All submodules (comprehensive testing)
+        - label: boot-systems (bootloader testing)
+        - label: iso-builder (ISO build testing)
+        - label: hardware-support (hardware validation)
+        - label: arm64-toolchain (build testing)
+        - label: custom-packages (package testing)
+        - label: Other submodules (specify in description)
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative Solutions
+      description: Have you considered alternative approaches?
+      placeholder: Describe any alternative testing solutions or workarounds you've considered
+
+  - type: dropdown
+    id: implementation-complexity
+    attributes:
+      label: Implementation Complexity
+      description: How complex do you think this feature would be to implement?
+      options:
+        - Low - Simple script or configuration changes
+        - Medium - Moderate framework development
+        - High - Significant testing infrastructure work
+        - Very High - Major architectural testing changes
+        - Unknown - Need Investigation
+    validations:
+      required: true
+
+  - type: textarea
+    id: testing-requirements
+    attributes:
+      label: Testing Requirements
+      description: What testing would be needed for this feature?
+      placeholder: |
+        - Framework testing requirements
+        - Platform validation needs
+        - CI/CD testing scope
+        - Integration testing requirements
+        - Performance validation needs
+
+  - type: dropdown
+    id: impact-on-development
+    attributes:
+      label: Impact on Development Workflow
+      description: How would this feature impact the development process?
+      options:
+        - Significantly Improves Development Velocity
+        - Enhances Code Quality and Reliability
+        - Reduces Manual Testing Effort
+        - Improves Developer Experience
+        - Enables New Testing Capabilities
+        - Minimal Workflow Impact
+        - Unknown Impact
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: validation
+    attributes:
+      label: Validation Checklist
+      description: Please confirm you have done the following
+      options:
+        - label: I have searched existing issues and feature requests for duplicates
+          required: true
+        - label: I have considered how this fits with ARM64 testing goals
+          required: true
+        - label: I have thought about cross-platform compatibility implications
+          required: true
+        - label: I understand this is a sustainable side project with flexible timelines
+          required: true

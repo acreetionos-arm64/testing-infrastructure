@@ -1,0 +1,91 @@
+name: Infrastructure Issue - Testing Infrastructure
+description: Report infrastructure, build, or development environment issues
+title: "[Infrastructure] testing-infrastructure: "
+labels: ["infrastructure", "testing"]
+assignees:
+  - macjunkins
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Infrastructure Issue for testing-infrastructure
+
+        Report issues related to testing frameworks, CI/CD pipelines, QEMU environments, hardware testing setup, or development environment configuration.
+
+  - type: dropdown
+    id: infrastructure-category
+    attributes:
+      label: Infrastructure Category
+      description: What type of infrastructure issue is this?
+      options:
+        - Testing Framework Configuration
+        - QEMU Environment Setup
+        - Hardware Testing Infrastructure
+        - CI/CD Pipeline Configuration
+        - GitHub Actions Workflow
+        - GitLab CI Pipeline
+        - Docker Testing Environment
+        - Python Environment Issues
+        - Hardware Device Setup
+        - Test Automation Framework
+        - Reporting Infrastructure
+        - Other (please specify)
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Infrastructure Issue Description
+      description: Detailed description of the infrastructure problem
+      placeholder: Describe the infrastructure issue and its impact on testing
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected-environments
+    attributes:
+      label: Affected Testing Environments
+      description: Which testing environments are affected?
+      options:
+        - All Testing Environments
+        - QEMU ARM64 Virtual Machines
+        - Raspberry Pi Hardware Testing
+        - Pine64 Hardware Testing
+        - GitHub Actions CI/CD
+        - GitLab CI Pipeline
+        - Docker Container Testing
+        - Local Development Testing
+        - Cross-Platform Testing
+        - Other (please specify)
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment-details
+    attributes:
+      label: Environment Details
+      description: Provide detailed environment information
+      placeholder: |
+        - Host OS and version
+        - Python version and virtual environment
+        - Testing framework versions (pytest, etc.)
+        - QEMU version and configuration
+        - Hardware details (if applicable)
+        - CI/CD runner specifications
+        - Docker version and images
+        - Network configuration (if relevant)
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Steps to Reproduce
+      description: Detailed steps to reproduce the infrastructure issue
+      placeholder: |
+        1. Set up testing environment...\n        2. Configure framework/pipeline...\n        3. Run test command...\n        4. Observe failure...\n    validations:\n      required: true\n\n  - type: textarea\n    id: error-logs\n    attributes:\n      label: Error Output and Logs\n      description: Complete error messages, logs, or diagnostic output\n      placeholder: Paste complete error output, CI/CD logs, QEMU output, or testing framework errors\n      render: shell\n\n  - type: dropdown\n    id: testing-impact\n    attributes:\n      label: Testing Impact\n      description: How does this affect the testing process?\n      options:\n        - Completely Blocks All Testing\n        - Prevents Specific Platform Testing\n        - Causes Intermittent Test Failures\n        - Degrades Testing Performance\n        - Affects CI/CD Pipeline Reliability\n        - Hardware Testing Only\n        - No Testing Impact (Setup Issue)\n    validations:\n      required: true\n\n  - type: checkboxes\n    id: affected-components\n    attributes:\n      label: Affected Testing Components\n      description: Which testing components are impacted?\n      options:\n        - label: QEMU virtual machine testing\n        - label: Hardware-in-the-loop testing\n        - label: CI/CD pipeline execution\n        - label: Test automation frameworks\n        - label: Cross-repository integration testing\n        - label: Performance benchmarking\n        - label: Security validation testing\n        - label: Test reporting and analytics\n\n  - type: dropdown\n    id: milestone-impact\n    attributes:\n      label: Milestone Impact\n      description: How does this infrastructure issue affect milestone progress?\n      options:\n        - Critical - Blocks milestone completion\n        - High - Significantly delays testing and validation\n        - Medium - Moderate impact on testing capability\n        - Low - Minor inconvenience, workarounds available\n        - None - No direct milestone impact\n    validations:\n      required: true\n\n  - type: textarea\n    id: workaround\n    attributes:\n      label: Current Workaround\n      description: Any temporary solutions or workarounds you've found\n      placeholder: Describe any workarounds that allow testing to continue\n\n  - type: textarea\n    id: proposed-solution\n    attributes:\n      label: Proposed Solution\n      description: If you have ideas for fixing this infrastructure issue\n      placeholder: |\n        - What changes might resolve this issue?\n        - Are there configuration updates needed?\n        - Should dependencies be updated?\n        - Any framework architectural changes required?\n        - Hardware setup modifications needed?\n\n  - type: checkboxes\n    id: cross-repository-coordination\n    attributes:\n      label: Cross-Repository Coordination\n      description: Does this issue require coordination with other submodules?\n      options:\n        - label: All submodules (affects comprehensive testing)\n        - label: arm64-toolchain (build environment testing)\n        - label: boot-systems (bootloader testing framework)\n        - label: hardware-support (hardware testing coordination)\n        - label: iso-builder (ISO build testing)\n        - label: Main workspace coordination required\n        - label: Upstream project coordination needed\n\n  - type: dropdown\n    id: urgency\n    attributes:\n      label: Issue Urgency\n      description: How urgent is resolving this infrastructure issue?\n      options:\n        - Critical - Blocking all testing and development\n        - High - Blocking specific testing or platforms\n        - Medium - Affecting testing efficiency and reliability\n        - Low - Minor issue, testing can continue with workarounds\n        - Planning - Future testing infrastructure improvement\n    validations:\n      required: true\n\n  - type: textarea\n    id: additional-context\n    attributes:\n      label: Additional Context\n      description: Any other relevant information about this infrastructure issue\n      placeholder: |\n        - Related to recent framework or pipeline changes?\n        - Environment-specific considerations?\n        - Upstream testing tool changes affecting infrastructure?\n        - Integration considerations with other testing tools?\n        - Performance or scalability concerns?\n\n  - type: checkboxes\n    id: validation\n    attributes:\n      label: Validation Checklist\n      description: Please confirm you have done the following\n      options:\n        - label: I have searched existing issues for similar infrastructure problems\n          required: true\n        - label: I have included complete error output and environment details\n          required: true\n        - label: I have verified this issue is reproducible\n          required: true\n        - label: I have considered impact on other developers and CI/CD systems\n          required: true
